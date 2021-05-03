@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Editer un gossip</title>
+  </head>
+  <body>
+    <h1>Editer le potin n°<%=id%></h1>
+    <p>Modifie le potin !</p>
+    <form action="/gossips/<%=id%>/edit/" method="POST">
+      Editer le nom <input type="text" name="gossip_author"><br>
+      Editer le potin <input type="text" name="gossip_content"><br>
+      <input type="submit">
+    </form>
+  </body>
+</html>
