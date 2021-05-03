@@ -1,9 +1,16 @@
 # The Gossip Project
 
-This is a project designed to test the `sinatra` gem. The purpose is to make a 
-web server able to handle requests from a user, with a program that has been designed
-to create gossips about people participating to our bootcamp.
+Ceci est un projet qui vise à apprendre l'utilisation de la gem `sinatra` pour créer un
+site avec des pages dynamiques. Le but est de pouvoir comprendre les relations entre
+les différents programmes qui composent le site, ainsi que les interactions avec les
+bases de données (pour le moment en CSV).
 
-## How to use
+## Comment l'utiliser ? 
 
-I don't know yet ! But I will find :)
+- Clonez le repo
+- Faites un `bundle install`
+- lancez `shotgun -p 4567`
+
+## Jusqu'où peut on aller dans le projet ?
+
+Où vous voulez, mais c'est souvent dans la gueule. (Mais qu'est-ce que je raconte moi ?)
