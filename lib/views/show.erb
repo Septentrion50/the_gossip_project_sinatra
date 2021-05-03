@@ -8,6 +8,12 @@
     <p>
     <strong>Son auteur :</strong> <%= to_disp[0] %><br>
     <strong>Le contenu du potin :</strong> <%= to_disp[1] %>
+    <hr>
+    <strong>Commentaires :</strong><br>
+    <% comm.each do |c| %>
+      <%= c[1] %><br>
+    <% end %><br>
+    <a href="/gossips/<%=id%>/comment/">Commenter</a>
     </p>
     <a href="/">Accueil</a>
   </body>

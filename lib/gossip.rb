@@ -36,6 +36,17 @@ class Gossip
     end
   end
 
+  def self.comment(id, comm)
+    CSV.open('db/comments.csv', 'ab') do |comment|
+      comment << [id, comm]
+    end
+  end
+
+  def self.find_comm(id)
+    read = CSV.read('db/comments.csv')
+    read.keep_if { |c| c[0] == id }
+  end
+
   def self.destroy(index)
     read = CSV.read('db/gossip.csv')
     read.delete_at(index)
