@@ -1,25 +1,40 @@
 <html>
   <head>
     <title>The Gossip Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Bienvenue sur The Gossip Project !</h1>
-    <h2>Tous les potins :</h2>
-    <% gossips.each_with_index do |gossip, index| %>
-      <a href="/gossips/<%=index%>/">
-        <p>
-          <%= gossip.author %><br>
-          <%= gossip.content %>
-        </p>
-      </a>
-      <% end %>
-    <h2>Créer un potin :</h2>
-    <a href="/gossips/new/">Créer un nouveau potin</a>
-    <h2>Editer un potin :</h2>
-    <% gossips.each_with_index do |gossips, index| %>
-      <span>
-        <a href="/gossips/<%=index%>/edit/"><%=gossips.content%></a>
-      </span>
-    <% end %>
+    <div class="container-fluid text-center mt-5">
+      <h1>Bienvenue sur The Gossip Project !</h1>
+      <h2 class="mb-5 text-muted">Tous les potins :</h2>
+      <% gossips.each_with_index do |gossip, index| %>
+        <div class="card mb-5" style="width: 18rem; margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title"><%= index %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%=gossip.author%></h6>
+            <p class="card-text">
+              <%= gossip.content %>
+            </p>
+            <a class="card-link" href="/gossips/<%=index%>/"> Voir le potin</a>
+          </div>
+        </div>
+        <% end %>
+      <div class="container mb-5">
+        <h2 class="mb-2">Créer un potin :</h2>
+        <a href="/gossips/new/">
+          <button type="button" class="btn btn-primary">Nouveau potin</button>
+        </a>
+      </div>
+      <h2 class="mb-2">Editer un potin :</h2>
+      <nav class="mb-4" aria-label="...">
+        <ul class="pagination pagination-lg justify-content-center">
+          <% gossips.each_with_index do |gossips, index| %>
+            <li class="page-item"><a class="page-link" href="/gossips/<%=index%>/edit/"><%=index%></a></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
   </body>
 </html>
